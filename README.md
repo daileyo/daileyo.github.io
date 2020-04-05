@@ -1,2 +1,2 @@
-# daileyo.pages.io
+# daileyo.github.io
 Trying out github pages
