@@ -9,5 +9,8 @@
 </head>
 <body>
   {{ content }}
+  <footer class="site-footer">
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+  </footer>
 </body>
 </html>

@@ -41,7 +41,7 @@ Set up the Jekyll project structure with a minimal configuration, base layout, a
 - [x] 1.6 Verify build — local Ruby/Jekyll not available; build will be verified via GitHub Pages remote build after push
 - [x] 1.7 Verify serve — will be confirmed via `https://daileyo.github.io` after push (no local Ruby environment)
 
-### [ ] 2.0 Profile Content and Image Assets
+### [x] 2.0 Profile Content and Image Assets
 
 Copy image assets from a-rld, add profile content (name, title, bio paragraph) to the index page, and integrate the profile image and banner/background image into the layout.
 
@@ -53,12 +53,12 @@ Copy image assets from a-rld, add profile content (name, title, bio paragraph) t
 
 #### 2.0 Tasks
 
-- [ ] 2.1 Create `assets/images/` directory and copy `profile-right.png` from `/home/daileyo/gws/a-rld/src/assets/images/profile-right.png`
-- [ ] 2.2 Copy `header-bg.png` from `/home/daileyo/gws/a-rld/src/assets/images/header-bg.png` into `assets/images/`
-- [ ] 2.3 Update `index.md` (or convert to `index.html`) to include: profile image (`<img>` tag referencing `assets/images/profile-right.png`), full name (R.L. Dailey), professional title, and a single career summary paragraph
-- [ ] 2.4 Update `_layouts/default.html` to reference `header-bg.png` as a banner or background element (e.g., hero section background)
-- [ ] 2.5 Use semantic HTML5 elements: `<main>`, `<section>`, `<header>`, `<figure>` for the profile image
-- [ ] 2.6 Verify all content renders correctly at `http://localhost:4000` (unstyled is fine at this stage)
+- [x] 2.1 Create `assets/images/` directory and copy `profile-right.png` from `/home/daileyo/gws/a-rld/src/assets/images/profile-right.png`
+- [x] 2.2 Copy `header-bg.png` from `/home/daileyo/gws/a-rld/src/assets/images/header-bg.png` into `assets/images/`
+- [x] 2.3 Converted `index.md` to `index.html` with profile image, full name (R.L. Dailey), title, and career summary paragraph
+- [x] 2.4 Updated `_layouts/default.html` with footer; `header-bg.png` referenced in `index.html` hero section (styled via CSS in Task 3.0)
+- [x] 2.5 Semantic HTML5 elements used: `<header>`, `<main>`, `<section>`, `<figure>`, `<footer>`
+- [x] 2.6 Local Jekyll not available; content structure verified by file review (rendering verified after push)
 
 ### [ ] 3.0 Styling — Modern Clean Design, Responsive Layout, and Dark Mode
 
