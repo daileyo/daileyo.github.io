@@ -1,4 +1,261 @@
 ---
 ---
 
-/* Base styles - placeholder */
+// ============================================================
+// Variables
+// ============================================================
+
+$font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$max-width: 640px;
+$profile-img-size: 160px;
+
+// Light mode colors
+$bg: #ffffff;
+$bg-secondary: #f8f9fa;
+$text: #1a1a2e;
+$text-muted: #555770;
+$border: #e0e0e6;
+$shadow: rgba(0, 0, 0, 0.08);
+$overlay: rgba(255, 255, 255, 0.55);
+
+// Dark mode colors
+$dark-bg: #111118;
+$dark-bg-secondary: #1a1a24;
+$dark-text: #e8e8ed;
+$dark-text-muted: #9a9ab0;
+$dark-border: #2a2a3a;
+$dark-shadow: rgba(0, 0, 0, 0.3);
+$dark-overlay: rgba(0, 0, 0, 0.55);
+
+// ============================================================
+// Reset & Base
+// ============================================================
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-stack;
+  color: $text;
+  background-color: $bg;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// ============================================================
+// Hero Banner
+// ============================================================
+
+.hero {
+  position: relative;
+  height: 220px;
+  background: url("../images/header-bg.png") center / cover no-repeat;
+  background-color: $bg-secondary;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: $overlay;
+}
+
+// ============================================================
+// Profile Card
+// ============================================================
+
+.profile {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0 1.5rem 3rem;
+  margin-top: -80px;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-card {
+  width: 100%;
+  max-width: $max-width;
+  text-align: center;
+}
+
+.profile-image {
+  margin: 0 auto 1.5rem;
+  width: $profile-img-size;
+  height: $profile-img-size;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid $bg;
+    box-shadow: 0 4px 20px $shadow;
+  }
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.profile-title {
+  font-size: 1.125rem;
+  color: $text-muted;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.profile-bio {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: $text;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+// ============================================================
+// Footer
+// ============================================================
+
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.8125rem;
+  color: $text-muted;
+  border-top: 1px solid $border;
+}
+
+// ============================================================
+// Fade-in Animation
+// ============================================================
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-card {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.profile-image {
+  animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.profile-name {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.profile-title {
+  animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.profile-bio {
+  animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+// ============================================================
+// Responsive
+// ============================================================
+
+@media (max-width: 480px) {
+  .hero {
+    height: 160px;
+  }
+
+  .profile {
+    margin-top: -60px;
+    padding: 0 1rem 2rem;
+  }
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-name {
+    font-size: 1.5rem;
+  }
+
+  .profile-title {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .profile-bio {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    height: 260px;
+  }
+
+  .profile {
+    margin-top: -80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    height: 300px;
+  }
+}
+
+// ============================================================
+// Dark Mode
+// ============================================================
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: $dark-text;
+    background-color: $dark-bg;
+  }
+
+  .hero {
+    background-color: $dark-bg-secondary;
+  }
+
+  .hero-overlay {
+    background: $dark-overlay;
+  }
+
+  .profile-image img {
+    border-color: $dark-bg;
+    box-shadow: 0 4px 20px $dark-shadow;
+  }
+
+  .profile-title {
+    color: $dark-text-muted;
+  }
+
+  .profile-bio {
+    color: $dark-text;
+  }
+
+  .site-footer {
+    color: $dark-text-muted;
+    border-top-color: $dark-border;
+  }
+}

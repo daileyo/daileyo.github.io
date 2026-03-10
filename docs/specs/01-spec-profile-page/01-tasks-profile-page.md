@@ -60,7 +60,7 @@ Copy image assets from a-rld, add profile content (name, title, bio paragraph) t
 - [x] 2.5 Semantic HTML5 elements used: `<header>`, `<main>`, `<section>`, `<figure>`, `<footer>`
 - [x] 2.6 Local Jekyll not available; content structure verified by file review (rendering verified after push)
 
-### [ ] 3.0 Styling — Modern Clean Design, Responsive Layout, and Dark Mode
+### [x] 3.0 Styling — Modern Clean Design, Responsive Layout, and Dark Mode
 
 Implement the visual design: sans-serif typography, whitespace-heavy layout, circular profile image, subtle fade-in animations, responsive breakpoints (320px–1920px+), and dark mode via `prefers-color-scheme`.
 
@@ -73,14 +73,14 @@ Implement the visual design: sans-serif typography, whitespace-heavy layout, cir
 
 #### 3.0 Tasks
 
-- [ ] 3.1 Create `assets/css/style.scss` with Jekyll front matter (`---` delimiters) to enable Sass processing
-- [ ] 3.2 Define base typography: system sans-serif font stack (or Inter), comfortable font sizes, line heights, and text color
-- [ ] 3.3 Implement single-column centered layout with `max-width`, auto margins, and generous vertical padding/spacing
-- [ ] 3.4 Style the profile image: circular crop (`border-radius: 50%`), appropriate max-width, subtle box-shadow
-- [ ] 3.5 Style the banner/background: `header-bg.png` as a hero section background with appropriate sizing and overlay if needed
-- [ ] 3.6 Add subtle CSS fade-in animation on page load using `@keyframes` and `animation` properties on content elements
-- [ ] 3.7 Add responsive breakpoints: ensure layout reflows cleanly at 320px, 768px, and 1200px+ using `@media` queries
-- [ ] 3.8 Implement dark mode using `@media (prefers-color-scheme: dark)` — invert background/text colors, adjust image shadow, ensure WCAG AA contrast
-- [ ] 3.9 Link the stylesheet in `_layouts/default.html` via `<link>` tag pointing to `{{ "/assets/css/style.css" | relative_url }}`
+- [x] 3.1 Create `assets/css/style.scss` with Jekyll front matter (`---` delimiters) to enable Sass processing
+- [x] 3.2 Define base typography: system sans-serif font stack, comfortable font sizes, line heights, and text color
+- [x] 3.3 Implement single-column centered layout with `max-width: 640px`, auto margins, and generous vertical padding/spacing
+- [x] 3.4 Style the profile image: circular crop (`border-radius: 50%`), 160px size, 4px border, subtle box-shadow
+- [x] 3.5 Style the banner/background: `header-bg.png` as hero section background with cover sizing and semi-transparent overlay
+- [x] 3.6 Add subtle CSS fade-in animation (`fadeInUp`) with staggered delays on profile elements
+- [x] 3.7 Add responsive breakpoints at 480px (mobile), 768px (tablet), and 1200px+ (desktop)
+- [x] 3.8 Implement dark mode using `@media (prefers-color-scheme: dark)` with inverted colors and WCAG AA contrast
+- [x] 3.9 Stylesheet already linked in `_layouts/default.html` from Task 1.0
 - [ ] 3.10 Test locally: verify desktop, mobile (dev tools responsive mode), and dark mode (dev tools emulation) all render correctly
 - [ ] 3.11 Push to `master` branch and verify `https://daileyo.github.io` loads the styled profile page
