@@ -1,0 +1,13 @@
+title: R.L. Dailey
+description: Personal profile page
+baseurl: ""
+url: "https://daileyo.github.io"
+
+markdown: kramdown
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - docs/
