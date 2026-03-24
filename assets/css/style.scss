@@ -6,10 +6,10 @@
 // ============================================================
 
 $font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$max-width: 640px;
+$max-width: 1000px;
 $profile-img-size: 380px;
 
-// Light mode colors
+// Colors
 $bg: #ffffff;
 $bg-secondary: #f8f9fa;
 $text: #1a1a2e;
@@ -17,15 +17,6 @@ $text-muted: #555770;
 $border: #e0e0e6;
 $shadow: rgba(0, 0, 0, 0.08);
 $overlay: rgba(255, 255, 255, 0.55);
-
-// Dark mode colors
-$dark-bg: #111118;
-$dark-bg-secondary: #1a1a24;
-$dark-text: #e8e8ed;
-$dark-text-muted: #9a9ab0;
-$dark-border: #2a2a3a;
-$dark-shadow: rgba(0, 0, 0, 0.3);
-$dark-overlay: rgba(0, 0, 0, 0.55);
 
 // ============================================================
 // Reset & Base
@@ -79,7 +70,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 0 1.5rem 3rem;
-  margin-top: -190px;
+  margin-top: -100px;
   position: relative;
   z-index: 1;
 }
@@ -87,23 +78,25 @@ body {
 .profile-card {
   width: 100%;
   max-width: $max-width;
-  text-align: center;
-  position: relative;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.profile-content {
+  flex: 1;
 }
 
 .profile-image {
-  position: absolute;
-  right: 0;
-  top: 0;
+  flex-shrink: 0;
   width: $profile-img-size;
   height: $profile-img-size;
 
   img {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
     object-fit: cover;
-    border: 4px solid $bg;
     box-shadow: 0 4px 20px $shadow;
   }
 }
@@ -113,7 +106,6 @@ body {
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 0.25rem;
-  padding-top: 400px;
 }
 
 .profile-title {
@@ -128,7 +120,6 @@ body {
   line-height: 1.75;
   color: $text;
   max-width: 520px;
-  margin: 0 auto;
 }
 
 // ============================================================
@@ -182,24 +173,30 @@ body {
 // Responsive
 // ============================================================
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .hero {
     height: 160px;
   }
 
   .profile {
-    margin-top: -140px;
+    margin-top: -80px;
     padding: 0 1rem 2rem;
   }
 
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
   .profile-image {
-    width: 280px;
-    height: 280px;
+    width: 200px;
+    height: 200px;
+    order: -1;
   }
 
   .profile-name {
     font-size: 1.5rem;
-    padding-top: 300px;
   }
 
   .profile-title {
@@ -209,6 +206,7 @@ body {
 
   .profile-bio {
     font-size: 1rem;
+    margin: 0 auto;
   }
 }
 
@@ -218,7 +216,7 @@ body {
   }
 
   .profile {
-    margin-top: -190px;
+    margin-top: -100px;
   }
 }
 
@@ -228,39 +226,3 @@ body {
   }
 }
 
-// ============================================================
-// Dark Mode
-// ============================================================
-
-@media (prefers-color-scheme: dark) {
-  body {
-    color: $dark-text;
-    background-color: $dark-bg;
-  }
-
-  .hero {
-    background-color: $dark-bg-secondary;
-  }
-
-  .hero-overlay {
-    background: $dark-overlay;
-  }
-
-  .profile-image img {
-    border-color: $dark-bg;
-    box-shadow: 0 4px 20px $dark-shadow;
-  }
-
-  .profile-title {
-    color: $dark-text-muted;
-  }
-
-  .profile-bio {
-    color: $dark-text;
-  }
-
-  .site-footer {
-    color: $dark-text-muted;
-    border-top-color: $dark-border;
-  }
-}
