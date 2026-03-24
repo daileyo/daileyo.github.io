@@ -60,7 +60,7 @@ body {
 .hero {
   position: relative;
   height: 220px;
-  background: url("../images/daileyo-banner.png") center / cover no-repeat;
+  background: url("../images/daileyo-banner.png") center / contain no-repeat;
   background-color: $bg-secondary;
 }
 
